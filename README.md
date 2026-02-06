@@ -137,7 +137,7 @@ python demo_vqinsight_comp.py \
 
 #### Score Regression (RALI)
 
-Please download the **RALI** pretrained weights from the [link](https://huggingface.co/ByteDance/Q-Insight/tree/main/rali). After downloading, place the checkpoint under `Q-Insight/checkpoints`, so that the directory structure becomes:
+Please download the **RALI** pretrained weights from the [link](https://huggingface.co/ByteDance/Q-Insight/tree/main/RALI). After downloading, place the checkpoint under `Q-Insight/checkpoints`, so that the directory structure becomes:
 
 ```text
 Q-Insight/
