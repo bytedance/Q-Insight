@@ -33,7 +33,9 @@ Q-Insight Family
 </div>
 
 ## 🚩 Updates
-- 2026.02.06 The code and pretrained model of RALI and VQ-Insight are released!
+- 2026.03.03 The complete code of RALI is released at [RALI](https://github.com/xuanyuzhang21/RALI).
+- 2026.03.03 The complete code of VQ-Insight is released at [VQ-Insight](https://github.com/xuanyuzhang21/VQ-Insight).
+- 2026.02.06 The inference code and pretrained model of RALI and VQ-Insight are released!
 - 2026.02.06 RALI has been accepted at ICLR 2026 as an **oral** presentation!
 - 2025.11.08 VQ-Insight has been accepted at AAAI 2026 as an **oral** presentation!
 - 2025.09.19 Q-Insight has been accepted at NeurIPS 2025 as a **spotlight** (Top 3%)!
