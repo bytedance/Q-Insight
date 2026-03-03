@@ -33,6 +33,7 @@ Q-Insight Family
 </div>
 
 ## 🚩 Updates
+- 2026.03.03 The complete code of RALI and VQ-Insight are released at [RALI](https://github.com/xuanyuzhang21/RALI) and [VQ-Insight](https://github.com/xuanyuzhang21/VQ-Insight).
 - 2026.02.06 The code and pretrained model of RALI and VQ-Insight are released!
 - 2026.02.06 RALI has been accepted at ICLR 2026 as an **oral** presentation!
 - 2025.11.08 VQ-Insight has been accepted at AAAI 2026 as an **oral** presentation!
@@ -42,11 +43,13 @@ Q-Insight Family
 - 2025.03.28 Released the Q-Insight technical report.
 
 ## 🔥 Introduction
+(✏️: * denotes equal contribution, # denotes project leader, † denotes corresponding author)
+
 <h3>
 Q-Insight: Understanding Image Quality via Visual Reinforcement Learning
 </h3>
 
-[Weiqi Li](https://scholar.google.com/citations?user=SIkQdEsAAAAJ), [Xuanyu Zhang](https://scholar.google.com/citations?user=Sq2q-E8AAAAJ&hl=zh-CN&oi=ao), Shijie Zhao, Yabin Zhang, Junlin Li, Li Zhang and [Jian Zhang](https://jianzhang.tech/)
+[Weiqi Li](https://scholar.google.com/citations?user=SIkQdEsAAAAJ), [Xuanyu Zhang](https://scholar.google.com/citations?user=Sq2q-E8AAAAJ&hl=zh-CN&oi=ao), Shijie Zhao<sup>#, †</sup>, Yabin Zhang, Junlin Li, Li Zhang and [Jian Zhang](https://jianzhang.tech/)<sup>†</sup>
 
 PLCC comparisons between our proposed Q-Insight and existing IQA metrics (left) and three example applications of our Q-Insight (right) are presented. Q-Insight demonstrates significantly improved performance compared to existing methods, especially on out-of-domain datasets. Additionally, Q-Insight effectively supports quality score regression, image degradation perception, and zero-shot image comparison reasoning tasks.
 <p align="center">
@@ -58,7 +61,7 @@ PLCC comparisons between our proposed Q-Insight and existing IQA metrics (left) 
 VQ-Insight: Teaching VLMs for AI-Generated Video Quality Understanding via Progressive Visual Reinforcement Learning
 </h3>
 
-[Xuanyu Zhang*](https://scholar.google.com/citations?user=Sq2q-E8AAAAJ&hl=zh-CN&oi=ao), [Weiqi Li*](https://scholar.google.com/citations?user=SIkQdEsAAAAJ), Shijie Zhao, Junlin Li, Li Zhang, Jian Zhang
+[Xuanyu Zhang*](https://scholar.google.com/citations?user=Sq2q-E8AAAAJ&hl=zh-CN&oi=ao), [Weiqi Li*](https://scholar.google.com/citations?user=SIkQdEsAAAAJ), Shijie Zhao<sup>#,†</sup>, Junlin Li, Li Zhang, Jian Zhang<sup>†</sup>
 
 We propose a reasoning-style vision-language model VQ-Insight, which accurately performs AIGC video preference comparison, AIGC video multi-dimension scoring, and natural video scoring, accompanied by detailed and reasonable reasoning processes. Our VQ-Insight can be applied to post-training of video generation models and zero-shot content repairing.
 
@@ -70,7 +73,7 @@ We propose a reasoning-style vision-language model VQ-Insight, which accurately 
 Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment
 </h3>
 
-Shijie Zhao*, Xuanyu Zhang*, Weiqi Li, Junlin Li, Li Zhang, Tianfan Xue, Jian Zhang
+Shijie Zhao<sup>*,#</sup>, Xuanyu Zhang<sup>*</sup>, Weiqi Li, Junlin Li, Li Zhang, Tianfan Xue, Jian Zhang
 
 We revisit the reasoning mechanism in MLLM-based IQA model (such as Q-Insight) and propose a CLIP-based lightweight image scorer RALI. We verifies that through RL training, MLLMs leverage their reasoning capability to convert redundant visual representations into compact, cross-domain aligned text representations. This conversion is the source of the generalization exhibited by these reasoning-based IQA models. RALI uses only about 4% of Q-Insight’s parameters and inference time, while achieving comparable accuracy.
 
@@ -92,51 +95,7 @@ pip install -e .[decord]
 ```
 
 ## ⚡ Quick Inference
-### Supported Tasks
-#### Score Regression (Q-Insight)
-```
-cd src/eval/
-python demo_score.py
-``` 
-#### Degradation Perception (Q-Insight)
-```
-cd src/eval/
-python demo_dist.py
-```
-#### Image Comparison Reasoning (Q-Insight)
-```
-cd src/eval/
-python demo_comparison.py
-```
-
-#### Natural Video Scoring (VQ-Insight)
-```bash
-cd src/eval/
-python demo_vqinsight_score.py \
-  --video_path "../../assets/demo_natural.mp4" \
-  --video_type natural
-```
-
-#### AIGC Video Multi-Dimension Scoring (VQ-Insight)
-```bash
-cd src/eval/
-python demo_vqinsight_score.py \
-  --video_path "../../assets/demo_aigc.mp4" \
-  --video_type aigc
-```
-
-#### AIGC Video Comparison (VQ-Insight)
-```bash
-cd src/eval/
-python demo_vqinsight_comp.py \
-  --video_a "../../assets/demo_comp1.mp4" \
-  --video_b "../../assets/demo_comp2.mp4" \
-  --model_name_or_path Bytedance/Q-Insight
-
-```
-
-#### Score Regression (RALI)
-
+### Demo for RALI
 Please download the **RALI** pretrained weights from the [link](https://huggingface.co/ByteDance/Q-Insight/tree/main/RALI). After downloading, place the checkpoint under `Q-Insight/checkpoints`, so that the directory structure becomes:
 
 ```text
@@ -160,7 +119,51 @@ cd src/eval/
 python demo_rali_score.py
 ```
 
-## 📖 Dataset Preparation for Training
+### Demo for VQ-Insight 
+#### Natural Video Scoring
+```bash
+cd src/eval/
+python demo_vqinsight_score.py \
+  --video_path "../../assets/demo_natural.mp4" \
+  --video_type natural
+```
+
+#### AIGC Video Multi-Dimension Scoring
+```bash
+cd src/eval/
+python demo_vqinsight_score.py \
+  --video_path "../../assets/demo_aigc.mp4" \
+  --video_type aigc
+```
+
+#### AIGC Video Comparison
+```bash
+cd src/eval/
+python demo_vqinsight_comp.py \
+  --video_a "../../assets/demo_comp1.mp4" \
+  --video_b "../../assets/demo_comp2.mp4" \
+  --model_name_or_path Bytedance/Q-Insight
+
+```
+
+### Demo for Q-Insight 
+#### Score Regression
+```
+cd src/eval/
+python demo_score.py
+``` 
+#### Degradation Perception
+```
+cd src/eval/
+python demo_dist.py
+```
+#### Image Comparison Reasoning
+```
+cd src/eval/
+python demo_comparison.py
+```
+
+## 📖 Dataset Preparation for Training Q-Insight
 #### Score Regression
 Download meta files from [Data-DeQA-Score](https://huggingface.co/datasets/zhiyuanyou/Data-DeQA-Score/tree/main) and the source images from the [KONIQ](https://database.mmsp-kn.de/koniq-10k-database.html) dataset.
 Arrange the folders in `./src/open-r1-multimodal/data`as follows:
@@ -190,7 +193,7 @@ Arrange the folders in `./src/open-r1-multimodal/data` as follows:
     |-- train_comparison.json
 ```
 
-## Training
+## Training Q-Insight
 #### Score Regression and Degradation Perception
 ```
 cd src/open-r1-multimodal/
@@ -202,6 +205,9 @@ cd src/open-r1-multimodal/
 bash run_qinsight_comparison.sh
 ```
 
+## Training VQ-Insight and RALI
+
+The training code of VQ-Insight and RALI will be released at [RALI](https://github.com/xuanyuzhang21/RALI) and [VQ-Insight](https://github.com/xuanyuzhang21/VQ-Insight).
 
 ## ✏️ To Do List
 - [x] Release the code and model of VQ-Insight
