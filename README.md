@@ -49,7 +49,7 @@ Q-Insight Family
 Q-Insight: Understanding Image Quality via Visual Reinforcement Learning
 </h3>
 
-[Weiqi Li](https://scholar.google.com/citations?user=SIkQdEsAAAAJ), [Xuanyu Zhang](https://scholar.google.com/citations?user=Sq2q-E8AAAAJ&hl=zh-CN&oi=ao), Shijie Zhao<sup>#, †</sup>, Yabin Zhang, Junlin Li, Li Zhang and [Jian Zhang](https://jianzhang.tech/)<sup>†</sup>
+[Weiqi Li](https://scholar.google.com/citations?user=SIkQdEsAAAAJ), [Xuanyu Zhang](https://scholar.google.com/citations?user=Sq2q-E8AAAAJ&hl=zh-CN&oi=ao), Shijie Zhao#,†, Yabin Zhang, Junlin Li, Li Zhang and [Jian Zhang](https://jianzhang.tech/)†
 
 PLCC comparisons between our proposed Q-Insight and existing IQA metrics (left) and three example applications of our Q-Insight (right) are presented. Q-Insight demonstrates significantly improved performance compared to existing methods, especially on out-of-domain datasets. Additionally, Q-Insight effectively supports quality score regression, image degradation perception, and zero-shot image comparison reasoning tasks.
 <p align="center">
@@ -61,7 +61,7 @@ PLCC comparisons between our proposed Q-Insight and existing IQA metrics (left) 
 VQ-Insight: Teaching VLMs for AI-Generated Video Quality Understanding via Progressive Visual Reinforcement Learning
 </h3>
 
-[Xuanyu Zhang*](https://scholar.google.com/citations?user=Sq2q-E8AAAAJ&hl=zh-CN&oi=ao), [Weiqi Li*](https://scholar.google.com/citations?user=SIkQdEsAAAAJ), Shijie Zhao<sup>#,†</sup>, Junlin Li, Li Zhang, Jian Zhang<sup>†</sup>
+[Xuanyu Zhang*](https://scholar.google.com/citations?user=Sq2q-E8AAAAJ&hl=zh-CN&oi=ao), [Weiqi Li*](https://scholar.google.com/citations?user=SIkQdEsAAAAJ), Shijie Zhao#,†, Junlin Li, Li Zhang, Jian Zhang†
 
 We propose a reasoning-style vision-language model VQ-Insight, which accurately performs AIGC video preference comparison, AIGC video multi-dimension scoring, and natural video scoring, accompanied by detailed and reasonable reasoning processes. Our VQ-Insight can be applied to post-training of video generation models and zero-shot content repairing.
 
@@ -73,7 +73,7 @@ We propose a reasoning-style vision-language model VQ-Insight, which accurately 
 Reasoning as Representation: Rethinking Visual Reinforcement Learning in Image Quality Assessment
 </h3>
 
-Shijie Zhao<sup>*,#</sup>, Xuanyu Zhang<sup>*</sup>, Weiqi Li, Junlin Li, Li Zhang, Tianfan Xue, Jian Zhang
+Shijie Zhao*,#, Xuanyu Zhang*, Weiqi Li, Junlin Li, Li Zhang, Tianfan Xue, Jian Zhang
 
 We revisit the reasoning mechanism in MLLM-based IQA model (such as Q-Insight) and propose a CLIP-based lightweight image scorer RALI. We verifies that through RL training, MLLMs leverage their reasoning capability to convert redundant visual representations into compact, cross-domain aligned text representations. This conversion is the source of the generalization exhibited by these reasoning-based IQA models. RALI uses only about 4% of Q-Insight’s parameters and inference time, while achieving comparable accuracy.
 
